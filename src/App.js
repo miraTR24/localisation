@@ -10,6 +10,7 @@ import { themeSettings } from "./theme";
 import Layout from "./scenes/layout";
 //import PageNotFound from "./scenes/pageNotFound";
 import LoginPage from "./scenes/loginPage";
+import SubScribePage from "./scenes/subScribePage";
 import Dashboard from "./scenes/dashboard";
 import MapTest from "./scenes/test";
 
@@ -32,6 +33,7 @@ function App() {
           <Routes>
           <Route>
             <Route path="/" element={<LoginPage />} />
+            <Route path="/Sub" element={<SubScribePage />} />
 
           </Route>
           <Route element={<Layout />}>

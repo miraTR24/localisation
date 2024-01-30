@@ -70,6 +70,26 @@ const Form = () => {
             }}
           >
             <TextField
+              label="Nom"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.nom}
+              name="nom"
+              error={Boolean(touched.nom) && Boolean(errors.nom)}
+              helperText={touched.nom && errors.nom}
+              sx={{ gridColumn: "span 4" }}
+            />
+            <TextField
+              label="Prénom"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.prenom}
+              name="prenom"
+              error={Boolean(touched.prenom) && Boolean(errors.prenom)}
+              helperText={touched.prenom && errors.prenom}
+              sx={{ gridColumn: "span 4" }}
+            />
+            <TextField
               label="Email"
               onBlur={handleBlur}
               onChange={handleChange}
@@ -81,6 +101,17 @@ const Form = () => {
             />
             <TextField
               label="Mot de passe"
+              type="password"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.password}
+              name="password"
+              error={Boolean(touched.password) && Boolean(errors.password)}
+              helperText={touched.password && errors.password}
+              sx={{ gridColumn: "span 4" }}
+            />
+              <TextField
+              label="Confirmation du mot de passe"
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
@@ -105,20 +136,15 @@ const Form = () => {
                 "&:hover": { color: palette.neutral.main },
               }}
             >
-               S'identifier !
+               S'inscrire !
             </Button>
-            <Grid container direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 15 : 1}>
-              <Grid item>
-                <Link href="#" variant="body2" color="#111111" fontWeight="200" >
-                  Mot de passe oublié?
-                </Link>
+            <Grid container>
+                <Grid item>
+                  <Link href="/" variant="body2" color="#111111" fontWeight="200" >
+                    {"Déjà un compte ? Identifiez-vous. "}
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="sub" variant="body2" color="#111111" fontWeight="200" >
-                  {"Première visite sur SPECTACULOOS ? Inscrivez-vous. "}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </form>
       )}

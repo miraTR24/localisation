@@ -2,7 +2,7 @@ import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import Form from "./Form";
 import LoginImage from "../../assets/BackLogin.png";
 
-const LoginPage = () => {
+const SubScribePage = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
@@ -24,11 +24,11 @@ const LoginPage = () => {
         borderRadius="1.5rem"
         backgroundColor={theme.palette.background.alt}
         position="absolute"
-        top={isNonMobileScreens ? "120px" : "120px"}
+        top={isNonMobileScreens ? "25px" : "0"}
         left={isNonMobileScreens ? "70px" : ""}
       >
         <Typography fontWeight="Bold" variant="h4" color={theme.palette.secondary.main} sx={{ mb: "1.5rem" ,textAlign: 'center',}}>
-          S'identifier !
+          Inscription !
         </Typography>
         <Form />
       </Box>
@@ -36,4 +36,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SubScribePage;

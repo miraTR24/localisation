@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/Header";
 import MapComponent from '../components/MapComponent';
 import imgUrl from '../../assets/spec.jpg'; 
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
 import {
   Box,
   Button,
@@ -25,45 +27,31 @@ const Dashboard = () => {
   return (
     <Box m="1.5rem 2.5rem">
       
-        <Header title="Vous cherchez des bons plans, profitez au dernier moment !!" />
-
-      <Box  mb="6rem">
-      <Box
-      component="form"
-      sx={{
-        paddingTop:"14rem",
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '300px',
-        margin: 'auto',
-        padding: '16px',
-        borderRadius: '8px',
-        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-      }}
-    >
-      <Typography variant="h5" sx={{ marginBottom: '16px' }}>
-        Découvrez les films
-      </Typography>
       <TextField
-        label="Saisissez votre ville..."
-        variant="outlined"
-        fullWidth
-        margin="normal"
-        sx={{ marginBottom: '16px' }}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleSearch}
-      >
-        Rechercher
-      </Button>
+  label="Saisissez votre ville..."
+  variant="outlined"
+  fullWidth
+  margin="normal"
+  InputLabelProps={{ style: { color: "#141414" } }}
 
-      
-      </Box>
-      </Box>
+  InputProps={{
+     sx: { borderRadius: "15px" },
+    endAdornment: (
+      <InputAdornment position="end" >
+        <SearchIcon  style={{ color: "#141414" }} />
+      </InputAdornment>
+    ),
+  }}
+  sx={{
+    background: "white",
+    marginBottom: '16px',
+    borderRadius: '15px', // Ajoute le border radius
+    width: '30%', // Réduit la largeur
+    margin: 'auto', // Centre l'élément horizontalement
+    display: 'block', // Permet le centrage horizontal
+  }}
+/>
+<hr style={{ border: '1px solid theme.palette.neutral.main ',marginTop:"50px"  }} />
 
       <Box
         mt="20px"
