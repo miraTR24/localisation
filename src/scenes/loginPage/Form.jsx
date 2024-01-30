@@ -6,12 +6,12 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "../../state";
 
 const loginSchema = yup.object().shape({
-  email: yup.string().email("Invalid email").required("Required"),
+  username: yup.string().required("Required"),
   password: yup.string().required("Required"),
 });
 
 const initialValuesLogin = {
-  email: "",
+  username: "",
   password: "",
 };
 
@@ -23,7 +23,7 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     console.log(values);
-    const loggedInResponse = await fetch("http://localhost:3001/api/login", {
+    const loggedInResponse = await fetch("http://10.130.163.58:8080/api/authenticate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
@@ -70,13 +70,13 @@ const Form = () => {
             }}
           >
             <TextField
-              label="Email"
+              label="username"
               onBlur={handleBlur}
               onChange={handleChange}
-              value={values.email}
-              name="email"
-              error={Boolean(touched.email) && Boolean(errors.email)}
-              helperText={touched.email && errors.email}
+              value={values.username}
+              name="username"
+              error={Boolean(touched.username) && Boolean(errors.username)}
+              helperText={touched.username && errors.username}
               sx={{ gridColumn: "span 4" }}
             />
             <TextField
