@@ -131,7 +131,7 @@ const Form = () => {
               sx={{
                 m: "2rem 0",
                 p: "1rem",
-                backgroundColor: palette.secondary.main,
+                backgroundColor: palette.neutral[300],
                 color: palette.background.alt,
                 "&:hover": { color: palette.neutral.main },
               }}

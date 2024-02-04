@@ -1,23 +1,38 @@
 // color design tokens export
 export const tokensDark = {
+
   grey: {
-    0: "#ffffff", // manually adjusted
-    10: "#f6f6f6", // manually adjusted
-    50: "#f0f0f0", // manually adjusted
-    100: "#e0e0e0",
-    200: "#c2c2c2",
-    300: "#a3a3a3",
-    400: "#858585",
-    500: "#666666",
-    600: "#525252",
-    700: "#3d3d3d",
-    800: "#292929",
-    900: "#141414",
-    1000: "#000000", // manually adjusted
-  },
+    //red
+    0: "#000000",
+    50: "#292929",
+      100: "#faced0",
+      200: "#f59da1",
+      300: "#ef6b72",
+      400: "#ea3a43",
+      500: "#e50914",
+      600: "#b70710",
+      700: "#89050c",
+      800: "#5c0408",
+      900: "#2e0204",
+       1000: "#ffffff",
+},
+
   primary: {
-    // blue
-    100: "#d3d4de",
+    //black
+      100: "#cccccc",
+      200: "#999999",
+      300: "#666666",
+      400: "#333333",
+      500: "#000000",
+      600: "#000000",
+      700: "#000000",
+      800: "#000000",
+      900: "#000000"
+},
+  secondary: {
+    // yellow
+    50: "#d3d4de",
+    100: "#000000",
     200: "#a6a9be",
     300: "#7a7f9d",
     400: "#4d547d",
@@ -26,19 +41,7 @@ export const tokensDark = {
     700: "#141937",
     800: "#0d1025",
     900: "#070812",
-  },
-  secondary: {
-    // yellow
-    50: "#f0f0f0", // manually adjusted
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
-    400: "#ffda85",
-    500: "#ffd166",
-    600: "#E50914",
-    700: "#997d3d",
-    800: "#665429",
-    900: "#332a14",
+    1000: "#ffffff",
   },
 };
 
@@ -82,7 +85,7 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: tokensDark.primary[600],
-              alt: tokensDark.primary[500],
+              alt: tokensDark.grey[50],
             },
           }
         : {
@@ -102,8 +105,8 @@ export const themeSettings = (mode) => {
               main: tokensDark.grey[1000],
             },
             background: {
-              default: tokensDark.grey[0],
-              alt: tokensDark.grey[50],
+              default: tokensDark.grey[1000],
+              alt: tokensDark.primary[100],
             },
           }),
     },

@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Typography, useTheme,Button } from "@mui/material";
+import { Box, Typography, useTheme,Button} from "@mui/material";
+import { Link } from 'react-router-dom';
 import FlexBetween from "./FlexBetween";
+
 
 const StatBox = ({ title, value1, value2, imageUrl,prix }) => {
   const theme = useTheme();
@@ -17,43 +19,48 @@ const StatBox = ({ title, value1, value2, imageUrl,prix }) => {
       borderRadius="0.55rem"
     
     >
-      <FlexBetween>
+             <img
+          src={imageUrl}
+          alt="Description de l'image"
+          style={{ width: '100%',height:'50%'}}  
+        />
         <Box>
-        <Typography variant="h5" fontWeight="600" sx={{ color: theme.palette.secondary[100] }}>
+      <Typography variant="h5" fontWeight="600" sx={{mt:'10px', color: theme.palette.secondary[100], textAlign:'center' }}>
           {title}
-        </Typography>
-      
+      </Typography>
+      <FlexBetween>
 
-      <Typography variant="h6" sx={{ color: theme.palette.secondary[200] }}>
+      <Typography variant="h6" sx={{mt:'10px', color: theme.palette.secondary[200] }}>
         {value1}
       </Typography>
-      <Typography variant="h6" sx={{ color: theme.palette.secondary[200] }}>
+      <Typography variant="h6" sx={{ mt:'10px',color: theme.palette.secondary[200] }}>
         {value2}
       </Typography>
-      <Typography variant="h6" sx={{ mt:'70px',color: theme.palette.secondary[200] }}>
+
+      </FlexBetween>
+      <Typography variant="h6" sx={{ mt:'10px',color: theme.palette.neutral[500] }}>
         {prix}
       </Typography>
      </Box>
-        {/* Utilisez la balise img avec la prop src définie par imageUrl */}
-        <img
-          src={imageUrl}
-          alt="Description de l'image"
-          style={{ width: '40%',}}  // Ajustez la largeur de l'image à 35%
-        />
-      </FlexBetween>
+
+
+    
+      <Link to="/DetailsPlace">
       <Button
         variant="contained"
         sx={{
-          mt: "3rem",
+          mt: "0.9rem",
           p: "1rem",
           backgroundColor: theme.palette.secondary.main,
           color: theme.palette.background.alt,
           "&:hover": { color: theme.palette.neutral.main },
+          width:'100%',
+          alignItems:"center"
         }}
-      
       >
-        Ajouter au panier
+        En savoir plus
       </Button>
+    </Link>
     </Box>
   );
 };

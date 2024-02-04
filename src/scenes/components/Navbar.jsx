@@ -91,9 +91,9 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           <Typography
             fontWeight="bold"
             fontSize="1.5rem"
-            sx={{ color: theme.palette.secondary[100] }}
+            sx={{ color: theme.palette.secondary[1000] }}
           >
-            SPECTACULOS
+            SPECTACULOOS
           </Typography>
         </FlexBetween>
 
@@ -101,16 +101,16 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
         <FlexBetween gap="1.5rem">
         <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
-              <DarkModeOutlined sx={{ fontSize: "25px" }} />
+              <DarkModeOutlined sx={{ fontSize: "25px" ,color: theme.palette.secondary[1000]}} />
             ) : (
-              <LightModeOutlined sx={{ fontSize: "25px" ,color: theme.palette.secondary[100] }} />
+              <LightModeOutlined sx={{ fontSize: "25px" ,color: theme.palette.secondary[1000] }} />
             )}
           </IconButton>
           <Box textAlign="left"   sx={{ display: { xs: "none", md: "block" },}}>
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[100] }}
+                  sx={{ color: theme.palette.secondary[1000] }}
                 >
                Catégories
                 </Typography>
@@ -120,7 +120,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[100] }}
+                  sx={{ color: theme.palette.secondary[1000] }}
                 >
                Mes favoris
                 </Typography>
@@ -130,7 +130,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[100] }}
+                  sx={{ color: theme.palette.secondary[1000] }}
                 >
                Mes réservations
                 </Typography>
@@ -140,7 +140,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[100] }}
+                  sx={{ color: theme.palette.secondary[1000] }}
                 >
                Mon compte
                 </Typography>
@@ -157,7 +157,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 gap: "1rem",
               }}
             >
-              <ArrowDropDownOutlined sx={{ color: "white", fontSize: "25px" }} />
+              <ArrowDropDownOutlined sx={{ color: "white" , fontSize: "25px" }} />
             </Button>
 
             {/* Drawer for small screens */}
@@ -165,7 +165,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               anchor="right"
               open={isDrawerOpen}
               onClose={handleCloseDrawer}
-              sx={{ display: { xs: "block", md: "none" } }}
+              sx={{ display: { xs: "block", md: "none" } ,color: "white"}}
             >
               {renderDrawerContent}
             </Drawer>

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../state";
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const loginSchema = yup.object().shape({
   username: yup.string().required("Required"),
   password: yup.string().required("Required"),
@@ -23,18 +24,19 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     console.log(values);
-    const loggedInResponse = await fetch("http://10.130.163.58:8080/api/authenticate", {
+    const loggedInResponse = await fetch(`${backendUrl}/api/authenticate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     });
+
     const loggedIn = await loggedInResponse.json();
     console.log(loggedIn);
     onSubmitProps.resetForm();
     if (loggedIn.success) {
       dispatch(
         setLogin({
-          user: loggedIn.user,
+        //  user: loggedIn.user,
           token: loggedIn.token,
         })
       );
@@ -100,7 +102,7 @@ const Form = () => {
               sx={{
                 m: "2rem 0",
                 p: "1rem",
-                backgroundColor: palette.secondary.main,
+                backgroundColor: palette.neutral[300],
                 color: palette.background.alt,
                 "&:hover": { color: palette.neutral.main },
               }}

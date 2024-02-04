@@ -22,12 +22,12 @@ const SubScribePage = () => {
         p="2rem"
         m="2rem auto"
         borderRadius="1.5rem"
-        backgroundColor={theme.palette.background.alt}
+        backgroundColor="white"
         position="absolute"
         top={isNonMobileScreens ? "25px" : "0"}
         left={isNonMobileScreens ? "70px" : ""}
       >
-        <Typography fontWeight="Bold" variant="h4" color={theme.palette.secondary.main} sx={{ mb: "1.5rem" ,textAlign: 'center',}}>
+        <Typography fontWeight="Bold" variant="h4" color={theme.palette.neutral[500]} sx={{ mb: "1.5rem" ,textAlign: 'center',}}>
           Inscription !
         </Typography>
         <Form />

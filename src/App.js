@@ -13,6 +13,7 @@ import LoginPage from "./scenes/loginPage";
 import SubScribePage from "./scenes/subScribePage";
 import Dashboard from "./scenes/dashboard";
 import MapTest from "./scenes/test";
+import DetailsPlace from "./scenes/detailsPlace";
 
 
 
@@ -40,6 +41,7 @@ function App() {
 
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/MapTest" element={<MapTest />} />
+            <Route path="/DetailsPlace" element={<DetailsPlace />} /> 
 
 
           </Route>
