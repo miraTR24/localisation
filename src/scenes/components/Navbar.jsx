@@ -10,6 +10,7 @@ import {
   SettingsOutlined,
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
+import { Link } from 'react-router-dom';
 import FlexBetween from "../components/FlexBetween";
 import { useDispatch } from "react-redux";
 import { setMode, setLogout } from "../../state";
@@ -88,6 +89,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           <IconButton onClick={handleMenuIconClick} sx={{ display: { md: "none" } }}>
             <MenuIcon sx={{ color: "white" }} />
           </IconButton>
+          <Link to="/Accueil" style={{ textDecoration: 'none' }}>
           <Typography
             fontWeight="bold"
             fontSize="1.5rem"
@@ -95,6 +97,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           >
             SPECTACULOOS
           </Typography>
+          </Link>
         </FlexBetween>
 
         {/* RIGHT SIDE */}
@@ -137,6 +140,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 
               </Box>
               <Box textAlign="left"   sx={{ display: { xs: "none", md: "block" },}} >
+              <Link to="/Moncompte" style={{ textDecoration: 'none' }}>
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
@@ -144,7 +148,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 >
                Mon compte
                 </Typography>
-                
+                </Link>
               </Box>
           <FlexBetween>
             <Button

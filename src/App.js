@@ -11,10 +11,10 @@ import Layout from "./scenes/layout";
 //import PageNotFound from "./scenes/pageNotFound";
 import LoginPage from "./scenes/loginPage";
 import SubScribePage from "./scenes/subScribePage";
-import Dashboard from "./scenes/dashboard";
+import Accueil from "./scenes/accueil";
 import MapTest from "./scenes/test";
 import DetailsPlace from "./scenes/detailsPlace";
-
+import MonCompte from "./scenes/monCompte";
 
 
 
@@ -39,10 +39,10 @@ function App() {
           </Route>
           <Route element={<Layout />}>
 
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/Accueil" element={<Accueil />} />
             <Route path="/MapTest" element={<MapTest />} />
             <Route path="/DetailsPlace" element={<DetailsPlace />} /> 
-
+            <Route path="/Moncompte" element={<MonCompte />} /> 
 
           </Route>
           </Routes>

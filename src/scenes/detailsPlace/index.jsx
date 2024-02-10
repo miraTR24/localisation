@@ -34,7 +34,7 @@ const DetailsPlace = ({  imageUrl }) => {
       </Box>
         <Box
         style={{ width: '60%'}}>
-        <Typography variant="h3" fontWeight="600" sx={{mt:'10px', color: theme.palette.secondary[100],ml:'50px'}}>
+        <Typography variant="h3" fontWeight="600" sx={{mt:'10px', color: theme.palette.secondary[200],ml:'50px'}}>
           TITRE DU FILM
        </Typography>
        <Box
@@ -101,13 +101,12 @@ const DetailsPlace = ({  imageUrl }) => {
       <Button
         variant="contained"
         sx={{
-         mr:"2px",
           mt: "10rem",
           p: "1rem",
           backgroundColor: theme.palette.secondary.main,
           color: theme.palette.background.alt,
           "&:hover": { color: theme.palette.neutral.main },
-          width:'100%',
+        //  width:'100%',
         }}
       >
         Ajouter au panier

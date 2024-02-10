@@ -38,7 +38,7 @@ const Form = () => {
           token: loggedIn.token,
         })
       );
-      navigate("/Dashboard");
+      navigate("/Accueil");
     }
   };
 
