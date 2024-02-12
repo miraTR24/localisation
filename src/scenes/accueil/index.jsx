@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 
 import StatBox from "../components/StatBox";
+import villesDeFrance from "../../const/villeDeFrance";
 //import MapComponent from "../components/MapComponent";
 const buttons = [
   "TOUT",
@@ -32,78 +33,55 @@ const Accueil = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
 
-  const villesDeFrance = ['The Godfather', 'Pulp Fiction'];
-  const top100Films = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 },
-    { label: 'The Dark Knight', year: 2008 },
-    { label: '12 Angry Men', year: 1957 },
-    { label: "Schindler's List", year: 1993 },
-    { label: 'Pulp Fiction', year: 1994 },] ;
-     const [inputValue, setInputValue] = useState('');
+ 
 
-    function searchCities(query) {
-      const normalizedQuery = query.trim().toLowerCase();
-      const matches = Object.keys(villesDeFrance).filter(city =>
-        city.toLowerCase().startsWith(normalizedQuery)
-      );
-      return matches.map(city => ({
-        name: city,
-        position: [villesDeFrance[city].latitude, villesDeFrance[city].longitude]
-      }));
-    }
+  
   return (
     <Box m="1.5rem 2.5rem">
-       <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={top100Films}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Movie" />}
+<Autocomplete
+  disablePortal
+  id="combo-box-demo"
+  options={villesDeFrance}
+  getOptionLabel={(option) => option.label}
+  renderInput={(params) => (
+    <TextField
+      {...params}
+      label="Saisissez votre ville..."
+      variant="outlined"
+      fullWidth
+      margin="normal"
+      InputLabelProps={{ style: { color: theme.palette.secondary.alt } }}
+      InputProps={{
+        sx: { borderRadius: "15px" },
+        ...params.InputProps,
+        endAdornment: (
+          <InputAdornment position="end">
+            <SearchIcon style={{ color: "#141414" }} />
+          </InputAdornment>
+        ),
+      }}
+      sx={{
+        marginBottom: '16px',
+        borderRadius: '15px',
+        width: '80%',
+        margin: 'auto',
+        display: 'block',
+        '@media (min-width:600px)': {
+          width: '60%',
+        },
+        '@media (min-width:960px)': {
+          width: '40%',
+        },
+        '@media (min-width:1280px)': {
+          width: '30%',
+        },
+      }}
     />
-      <Autocomplete
-        options={searchCities(inputValue)}
-        getOptionLabel={option => option.name}
-        onChange={(event, newValue) => {
-          setInputValue(newValue || ''); // Met à jour la valeur de l'inputValue
-        }}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Saisissez votre ville..."
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            InputLabelProps={{ style: { color: "black" } }}
-            InputProps={{
-              sx: { borderRadius: "15px" },
-              endAdornment: (
-                <InputAdornment position="end">
-                  <SearchIcon style={{ color: "#141414" }} />
-                </InputAdornment>
-              ),
-            }}
-            sx={{
-              background: "white",
-              marginBottom: '16px',
-              borderRadius: '15px',
-              width: '80%',
-              margin: 'auto',
-              display: 'block',
-              '@media (min-width:600px)': {
-                width: '60%',
-              },
-              '@media (min-width:960px)': {
-                width: '40%',
-              },
-              '@media (min-width:1280px)': {
-                width: '30%',
-              },
-            }}
-          />
-        )}
-      />
+  )}
+/>
+
+
+   
 <hr style={{ border: '1px solid theme.palette.neutral.main ',marginTop:"50px"  }} />
 
 <FlexBetween sx={{ flexWrap: 'wrap' }}>
@@ -115,8 +93,8 @@ const Accueil = () => {
             marginRight: "0.5rem",
             marginBottom: "0.5rem", // Ajoutez une marge en bas pour créer une nouvelle ligne
             fontSize: "0.85rem",
-            color: theme.palette.secondary.main,
-            borderColor:theme.palette.secondary.main
+            color: theme.palette.secondary.alt,
+            borderColor:theme.palette.secondary.alt
           }}
         >
           {label}

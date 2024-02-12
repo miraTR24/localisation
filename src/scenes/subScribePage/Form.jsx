@@ -140,7 +140,7 @@ const Form = () => {
             </Button>
             <Grid container>
                 <Grid item>
-                  <Link href="/" variant="body2" color="#111111" fontWeight="200" >
+                  <Link href="/" variant="body2" color={palette.secondary.alt} fontWeight="200" >
                     {"Déjà un compte ? Identifiez-vous. "}
                   </Link>
                 </Grid>

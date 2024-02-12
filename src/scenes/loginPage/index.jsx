@@ -22,7 +22,7 @@ const LoginPage = () => {
         p="2rem"
         m="2rem auto"
         borderRadius="1.5rem"
-        backgroundColor="white"
+        backgroundColor= {theme.palette.secondary.altinv}
         position="absolute"
         top={isNonMobileScreens ? "120px" : "120px"}
         left={isNonMobileScreens ? "70px" : ""}

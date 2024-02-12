@@ -22,7 +22,7 @@ const SubScribePage = () => {
         p="2rem"
         m="2rem auto"
         borderRadius="1.5rem"
-        backgroundColor="white"
+        backgroundColor= {theme.palette.secondary.altinv}
         position="absolute"
         top={isNonMobileScreens ? "25px" : "0"}
         left={isNonMobileScreens ? "70px" : ""}

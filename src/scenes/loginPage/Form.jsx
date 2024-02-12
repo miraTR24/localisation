@@ -79,7 +79,7 @@ const Form = () => {
               name="username"
               error={Boolean(touched.username) && Boolean(errors.username)}
               helperText={touched.username && errors.username}
-              sx={{ gridColumn: "span 4" }}
+              sx={{ gridColumn: "span 4" ,color:'black' }}
             />
             <TextField
               label="Mot de passe"
@@ -111,12 +111,12 @@ const Form = () => {
             </Button>
             <Grid container direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 15 : 1}>
               <Grid item>
-                <Link href="#" variant="body2" color="#111111" fontWeight="200" >
+                <Link href="#" variant="body2" color={palette.secondary.alt} fontWeight="200" >
                   Mot de passe oublié?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="sub" variant="body2" color="#111111" fontWeight="200" >
+                <Link href="sub" variant="body2" color={palette.secondary.alt} fontWeight="200" >
                   {"Première visite sur SPECTACULOOS ? Inscrivez-vous. "}
                 </Link>
               </Grid>

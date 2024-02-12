@@ -93,7 +93,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           <Typography
             fontWeight="bold"
             fontSize="1.5rem"
-            sx={{ color: theme.palette.secondary[1000] }}
+            sx={{ color: "white" }}
           >
             SPECTACULOOS
           </Typography>
@@ -104,39 +104,43 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
         <FlexBetween gap="1.5rem">
         <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
-              <DarkModeOutlined sx={{ fontSize: "25px" ,color: theme.palette.secondary[1000]}} />
+              <DarkModeOutlined sx={{ fontSize: "25px" ,color: "white"}} />
             ) : (
-              <LightModeOutlined sx={{ fontSize: "25px" ,color: theme.palette.secondary[1000] }} />
+              <LightModeOutlined sx={{ fontSize: "25px" ,color: "white" }} />
             )}
           </IconButton>
           <Box textAlign="left"   sx={{ display: { xs: "none", md: "block" },}}>
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[1000] }}
+                  sx={{ color: "white" }}
                 >
                Catégories
                 </Typography>
                 
               </Box>
+             
               <Box textAlign="left"   sx={{ display: { xs: "none", md: "block" },}}>
+                <Link to="/Monfavoris" style={{ textDecoration: 'none' }}>
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[1000] }}
+                  sx={{color: "white"}}
                 >
                Mes favoris
                 </Typography>
-                
+              </Link>
               </Box>
               <Box textAlign="left"   sx={{ display: { xs: "none", md: "block" },}} >
+              <Link to="/Mesreservations" style={{ textDecoration: 'none' }}>
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[1000] }}
+                  sx={{color: "white" }}
                 >
                Mes réservations
                 </Typography>
+                </Link>
                 
               </Box>
               <Box textAlign="left"   sx={{ display: { xs: "none", md: "block" },}} >
@@ -144,7 +148,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[1000] }}
+                  sx={{color: "white" }}
                 >
                Mon compte
                 </Typography>

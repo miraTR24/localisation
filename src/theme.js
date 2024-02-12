@@ -31,6 +31,7 @@ export const tokensDark = {
 },
   secondary: {
     // yellow
+    0: "#000000",
     50: "#d3d4de",
     100: "#000000",
     200: "#a6a9be",
@@ -77,7 +78,9 @@ export const themeSettings = (mode) => {
             },
             secondary: {
               ...tokensDark.secondary,
-              main: tokensDark.secondary[300],
+              main: tokensDark.secondary[400],
+              alt: tokensDark.secondary[1000],
+              altinv:tokensDark.secondary[0],
             },
             neutral: {
               ...tokensDark.grey,
@@ -85,7 +88,7 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: tokensDark.primary[600],
-              alt: tokensDark.grey[50],
+              alt: tokensDark.secondary[700],
             },
           }
         : {
@@ -99,6 +102,8 @@ export const themeSettings = (mode) => {
               ...tokensLight.secondary,
               main: tokensDark.secondary[600],
               light: tokensDark.secondary[700],
+              alt: tokensDark.secondary[0],
+              altinv:tokensDark.secondary[1000],
             },
             neutral: {
               ...tokensLight.grey,
